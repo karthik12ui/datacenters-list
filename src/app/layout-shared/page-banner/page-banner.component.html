@@ -1,0 +1,33 @@
+<div class="p-0 page-banner {{bgColor}} {{textColor}}"> 
+    <div fxLayout="row wrap" class="theme-container">
+        <div fxFlex="50" class="p-1">
+            <div fxLayout="row">
+                <h1 class="uppercase py-1" ngClass.gt-xs="py-3"><mat-icon >remove</mat-icon> {{mainTitle}}</h1>
+                <span *ngIf="enableQuickNav && !!parentMenu && parentMenu.length>0" fxShow="false" fxShow.gt-sm>
+                    <button mat-icon-button [matMenuTriggerFor]="mainMenuNavigate" class="select-mainNav">
+                        <mat-icon>more_horiz</mat-icon>
+                    </button>
+                    <mat-menu #mainMenuNavigate="matMenu">
+                        <button (click)= "navigateInApp(item.routerLink)" mat-menu-item *ngFor="let item of parentMenu">
+                           <span>{{item.title}}</span>
+                        </button>
+                    </mat-menu>
+                </span>
+              
+            </div>
+           
+            <h2 class="p-1">{{title}}</h2>
+            <p class="desc mb-1 px-1">{{subTitle}}</p>
+        </div>
+        <div fxFlex="50" class="p-0" >
+            <img [src]="image" alt="mission" class="mw-100 d-block banner-image">                
+        </div>
+    </div>
+    <app-svg-line-style 
+    [lineStrokeColor] = "lineStrokeColor"
+    [pathPosition] = "'both'"></app-svg-line-style> 
+    <app-svg-grid-style 
+    [gridStrokeColor] = "gridStrokeColor"
+    [pathPosition] = "'both'"
+    ></app-svg-grid-style>
+</div>

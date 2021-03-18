@@ -1,0 +1,44 @@
+{
+    "serviceStatus": {
+        "statusCode": "0000",
+        "statusMesssage": "SUCCESS",
+        "sessionToken": ""
+    },
+    "errorInfo": [],
+    "data": {
+        "list": [
+            {
+                "name": "Server 1",
+                "instances": "125",
+                "ram": "16 GB",
+                "hardDisk": "512 GB",
+                "type" : "SSD",
+                "status": true
+            },
+            {
+                "name": "Server 2",
+                "instances": "200",
+                "ram": "16 GB",
+                "hardDisk": "1 TB",
+                "type" : "SSD",
+                "status": true
+            },
+            {
+                "name": "Server 3",
+                "instances": "23",
+                "ram": "16 GB",
+                "hardDisk": "512 GB",
+                "type" : "SSD",
+                "status": false
+            },
+            {
+                "name": "Server 4",
+                "instances": "125",
+                "ram": "16 GB",
+                "hardDisk": "512 GB",
+                "type" : "SSD",
+                "status": true
+            }
+        ]
+    }
+}

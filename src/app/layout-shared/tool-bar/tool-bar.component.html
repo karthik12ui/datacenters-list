@@ -1,0 +1,25 @@
+<mat-toolbar id="top-toolbar" class="top-toolbar">
+  <div class="theme-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span fxHide="false" fxHide.gt-sm>
+        <button mat-button (click)="sidenavToggle()">
+          <mat-icon>menu</mat-icon>
+        </button> 
+      </span>
+      <div fxLayout="row" fxLayoutAlign="start center" fxShow="false" fxShow.gt-sm>
+        <span fxLayoutAlign="center center" class="item">
+        </span>
+        <span class="v-divider"></span>
+        <span fxLayoutAlign="center center" class="item">
+        </span>
+        <span class="v-divider"></span>
+        <span fxLayoutAlign="center center" class="item">
+        </span>
+        
+      </div>         
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="">
+      <app-user-menu></app-user-menu>
+    </div>    
+  </div>           
+</mat-toolbar>

@@ -1,0 +1,39 @@
+@import '../../styles/skins/generalColors';
+
+:host ::ng-deep .mat-icon-button {
+    height: 0px !important;
+    line-height: 0px !important;
+}
+
+.alert {
+    font-size: 15px;
+    padding:15px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    font-weight: 600;
+}
+
+.notification p {
+    margin-bottom: 0px !important;
+}
+
+.bold-black {
+    color: #000;
+    font-family: inherit;
+}
+
+p .alert-link {
+    cursor: pointer;
+    color: #333 !important;
+    border-bottom: 2px solid #333 !important;
+}
+
+p .alert-link:hover {
+    color: #fff !important;
+    border-bottom: 2px solid #fff !important;
+}
+.close{
+    cursor: pointer;
+}
+
+$alert-name: def

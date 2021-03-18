@@ -1,0 +1,55 @@
+@import '../../styles/skins/generalColors';
+
+.page-banner{
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    max-height: 250px;
+    width: 100%;
+    &:before{        
+        content: '';        
+        position:absolute;
+        top: 0;
+        // z-index: -1;
+        width: 100%;
+        height: 100%; 
+        background-image: url('../../../assets/images/pattern/p3.png');
+        background-repeat: repeat;
+        opacity: 0.3;
+    }   
+    .content{
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+    }
+    h1 {
+        font-weight: 800;
+        font-size: 40px;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    .banner-image{
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .select-mainNav{
+        margin-top: 28px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .page-banner{
+        h1 {
+            font-weight: 800;
+            font-size: 25px;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    }
+  }

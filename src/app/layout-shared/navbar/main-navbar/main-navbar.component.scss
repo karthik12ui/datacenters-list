@@ -1,0 +1,26 @@
+.cdk-overlay-pane.mega-menu-pane{
+    left: 0 !important;
+    width: 100%;
+    .mat-menu-panel{
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        .mat-menu-content{
+            padding: 0;
+        }
+    }
+    .mega-menu-widget{
+        position: relative;
+        button{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-weight: 400;
+        }
+        .mat-chip-list{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "serviceStatus": {
+        "statusCode": "0000",
+        "statusMesssage": "SUCCESS",
+        "sessionToken": ""
+    },
+    "errorInfo": [],
+    "data": {
+        "userName": "Karthik.nathani",
+        "emailAddress": "Karthik.nathani@rayonsoft.com",
+        "contactNumber": "1234567891",
+        "userUniqueId": "RS0001",
+        "firstName": "karthik",
+        "lastName": "nathani",
+        "createdOn": "2020-05-18T16:00:00Z",
+        "createdBy": {
+            "userUniqueId":"RS0002"
+        },
+        "assignedTo" : [
+            {
+                "userUniqueId":"RS0003"
+            }
+        ],
+        "userRole": "RSUR03",
+        "userEmpType": "RSET03",
+        "userStatus": "Active"
+    }
+}

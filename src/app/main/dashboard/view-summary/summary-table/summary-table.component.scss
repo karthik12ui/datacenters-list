@@ -1,0 +1,36 @@
+@import "../../../../styles/base";
+$mat-header-row-height: 50px;
+$mat-row-height: 50px !important;
+$mat-row-height65: 65px !important;
+$mat-row-horizontal-padding: 24px;
+:host ::ng-deep{ 
+
+    .mat-table .mat-header-row {
+      box-shadow: none !important;
+      border-bottom: 1px solid $black-bg !important;
+      border-top: 1px solid $black-bg !important;
+    }
+    .mat-table .mat-header-row .mat-header-cell {
+        color: $black-bg !important;
+        font-size: 16px;
+    }
+    .mat-table .mat-expansion-panel {
+      box-shadow: none !important;
+      border-bottom: 1px solid $default-color !important;
+    }
+   }
+   .mat-header-row {
+    min-height: $mat-header-row-height;
+  }
+  .mat-row {
+    min-height: $mat-row-height;
+  }
+  @media screen and (max-width: 960px) {
+    .mat-row {
+      min-height: $mat-row-height65;
+    }
+  
+  }
+  .text-bold {
+    font-weight: bold;
+}

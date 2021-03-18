@@ -1,0 +1,39 @@
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false" class="mega-menu app-dropdown">
+  <div fxLayout="row wrap" class="theme-container" *ngIf="menuType == 'megaMenu'">
+    <div fxFlex="25" class="p-0 mega-menu-banner {{displayBannerTitle.bgColorCode}}"> 
+      <h2 class="uppercase p-3">{{displayBannerTitle.title}}</h2>
+      <p class="desc mb-1 px-3">{{displayBannerTitle.subText}}</p>
+      <div fxLayout="row" fxLayoutAlign="start center" class="p-3">
+        <a mat-raised-button 
+       fxShow="false"
+         fxShow.gt-xs class="uppercase">Learn More</a>
+      </div> 
+  </div>
+    <div fxFlex="75" class="p-1"> 
+      <div fxLayout="row wrap">
+        <div *ngFor="let item of subChildMenu" [fxFlex]= "item.FlexValue" fxLayout = "column" class="p-1">
+          <a mat-menu-item *ngIf="item.menuLinkType == 'title'">
+          <b>{{item.title}}</b>
+          </a>
+          <mat-divider></mat-divider>
+          <span *ngFor="let subItem of item.subChildList">
+            <a  mat-menu-item
+            (click) = "navigateInApp(subItem.id, subItem.routerLink)">
+            {{subItem.title}}
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+     
+  </div>
+
+  <div *ngIf="menuType == 'listMenu'">
+    <span *ngFor="let listItems of subChildMenu">
+      <a  mat-menu-item
+      (click) = "navigateInApp(listItems.id, listItems.routerLink)">
+      {{listItems.title}}
+      </a>
+    </span>
+  </div> 
+</mat-menu>

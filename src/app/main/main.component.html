@@ -1,0 +1,36 @@
+<mat-sidenav-container> 
+    <mat-sidenav [opened]="false" mode="over" #sidenav class="sidenav mat-elevation-z6">
+        <div fxLayout="row">
+            <!-- <a class="header-logo" fxFlex="30"> 
+                <img src="assets/images/logos/r-trans-logo.png" alt="user-image" width="50">
+              </a>  -->
+              <button mat-icon-button color="warn" class="close" (click)="sidenav.close()">
+                <mat-icon color="primary">close</mat-icon>
+             </button>
+           </div> 
+        <div class="divider"></div>
+
+        <div perfectScrollbar class="vertical-menu-wrapper">
+            <app-side-navbar [menuItems]="sidenavMenuItems" [menuParentId]="0"></app-side-navbar>
+        </div>       
+
+        <div class="divider"></div>
+        <app-social-icons [iconSize]="'xlg'" [iconColor]="'primary'" fxLayout="row" fxLayoutAlign="center center"></app-social-icons>
+        
+    </mat-sidenav>
+    <mat-sidenav-content class="page-wrapper" fxLayout="column" fxLayoutAlign="start stretch">
+        <header class ="toolbar" [class.has-bg-image]="false" [class.main-toolbar-fixed]="false">
+            <app-tool-bar (onMenuIconClick)="sidenav.toggle()"></app-tool-bar>
+            <app-main-navbar></app-main-navbar>
+        </header>
+          
+        <main [class.content-offset-to-top]="false">
+            <router-outlet></router-outlet>              
+        </main>
+
+     
+        <div *ngIf="showBackToTop" fxLayout="row" fxLayoutAlign="center center" class="back-to-top" (click)="scrollToTop()">
+            <mat-icon>arrow_upward</mat-icon>
+        </div>
+    </mat-sidenav-content> 
+</mat-sidenav-container> 

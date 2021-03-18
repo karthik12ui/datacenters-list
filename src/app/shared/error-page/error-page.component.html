@@ -1,0 +1,62 @@
+<div class="theme-container my-5">
+  <mat-card class="p-0 mat-elevation-z6 box">
+      <div fxLayout="column" fxLayoutAlign="center center" class="bg-primary box-header">
+          <mat-icon class="mat-icon-xlg">error</mat-icon>
+          <h1 class="error">Error Page</h1>
+      </div>
+      <span *ngIf="displayError">
+        <mat-card-content  class="my-2">
+          <p fxLayout="row" fxLayoutAlign="start center" class="error-text px-3">{{errorDetails.Message}}</p>
+          <div *ngIf="errorcodeType.hasSuccessAPIErrorCode">
+              <div *ngIf="errorDetails.ErrorInfo !== undefined && errorDetails.ErrorInfo !== null && errorDetails.ErrorInfo.length>0">
+                      <div fxLayoutGap.gt-xs="25px" fxLayout="row" fxLayoutAlign="start center">
+                          <span class="errorTitle px-3">
+                              Code: 
+                          </span>
+                          <h1 class="errorCode">
+                              {{errorDetails.ErrorInfo[0].errorCode}}
+                          </h1>
+                      </div>
+                      <div fxLayoutGap.gt-xs="25px" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="errorTitle px-3">
+                            Message: 
+                        </span>
+                        <p class="error-text">
+                            {{errorDetails.ErrorInfo[0].errorDesc}}
+                        </p>
+                    </div>
+              </div>
+          </div>
+          <div *ngIf="errorcodeType.hasFailureAPIErrorCode">
+            <div fxLayoutGap.gt-xs="25px" fxLayout="row" fxLayoutAlign="start center">
+              <span class="errorTitle px-3">
+                  Code: 
+              </span>
+              <h1 class="errorCode">
+                  {{errorDetails.ErrorInfo.status}}
+              </h1>
+          </div>
+              <div fxLayoutGap.gt-xs="25px" fxLayout="row" fxLayoutAlign="start center">
+                <span class="errorTitle px-3">
+                    Message: 
+                </span>
+                <p class="error-text">
+                    {{errorDetails.ErrorInfo.message}}
+                </p>
+            </div>
+        </div>
+        </mat-card-content>
+      </span>
+   
+      <div fxLayout="column" fxLayoutAlign="center center" class="py-4">
+          <span fxLayoutGap="25px" fxLayoutAlign="end center">
+            <a mat-raised-button class="btn-border-black" color="secondary">
+              Back to Home
+            </a>
+            <a mat-raised-button class="btn-black" color="secondary">
+                Sign Out
+            </a>
+          </span>
+      </div>
+  </mat-card>
+</div>

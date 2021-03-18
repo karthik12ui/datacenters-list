@@ -1,0 +1,24 @@
+.line_path_svg_left{
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    height: 100%;
+    display: block;
+    max-width: 9999%;
+    width: auto;
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.line_path_svg_right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    height: 100%;
+    display: block;
+    max-width: 9999%;
+    width: auto;
+}

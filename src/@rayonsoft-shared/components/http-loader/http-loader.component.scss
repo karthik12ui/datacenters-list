@@ -1,0 +1,128 @@
+$balls-color: #fff;
+
+h4{
+    text-align: center !important;
+    color: $balls-color;
+    padding-left: 20px;
+    font-size: 35px;
+}
+
+.http-loader {
+    width: 32px;
+    height: 32px;
+    clear: both;
+    top: 50%;
+    left: 50%;
+    margin: 18px auto;
+    z-index: 99;
+}
+/* Spinner 3Balls Scale */
+.HLoad-balls, .HLoad-balls:before, .HLoad-balls:after {
+    border-radius: 50%;
+    background-color: $balls-color;
+    width: 18px;
+    height: 18px;
+    transform-origin: center center;
+    display: inline-block;
+  }
+   
+  .HLoad-balls {
+    position: relative;
+    background-color: rgba($balls-color, 1) ;
+    opacity: 1;
+    -webkit-animation: spScaleAlpha 1s infinite linear;
+    animation: spScaleAlpha 1s infinite linear;
+  }
+   
+  .HLoad-balls:before, .HLoad-balls:after {
+    content: '';
+    position: relative;
+    opacity: 0.25;
+  }
+   
+  .HLoad-balls:before {
+    left: 30px;
+    top: 0px;
+    -webkit-animation: spScaleAlphaBefore 1s infinite linear;
+    animation: spScaleAlphaBefore 1s infinite linear;
+  }
+   
+  .HLoad-balls:after {
+    left: -30px;
+    top: -24px;
+    -webkit-animation: spScaleAlphaAfter 1s infinite linear;
+    animation: spScaleAlphaAfter 1s infinite linear;
+  }
+   
+  @-webkit-keyframes spScaleAlpha {
+    0% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 0.25;
+    }
+    66% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes spScaleAlpha {
+    0% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 0.25;
+    }
+    66% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes spScaleAlphaBefore {
+    0% {
+      opacity: 0.25;
+    }
+    33% {
+      opacity: 1;
+    }
+    66% {
+      opacity: 0.25;
+    }
+  }
+  @keyframes spScaleAlphaBefore {
+    0% {
+      opacity: 0.25;
+    }
+    33% {
+      opacity: 1;
+    }
+    66% {
+      opacity: 0.25;
+    }
+  }
+  @-webkit-keyframes spScaleAlphaAfter {
+    33% {
+      opacity: 0.25;
+    }
+    66% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.25;
+    }
+  }
+  @keyframes spScaleAlphaAfter {
+    33% {
+      opacity: 0.25;
+    }
+    66% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.25;
+    }
+  }

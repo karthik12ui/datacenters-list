@@ -1,0 +1,52 @@
+<div fxLayout="row wrap" class="pt-2" [hidden]="!displayList">
+  <div fxFlex="100" class="col" >
+        <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                  <mat-cell *matCellDef="let row" data-label="name">
+                       <span class="text-bold">
+                            {{row.name}} 
+                        </span>
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="instances">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Instances </mat-header-cell>
+                  <mat-cell *matCellDef="let row" data-label="instances">
+                    {{row.instances}} 
+                
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="ram">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Ram Size</mat-header-cell>
+                  <mat-cell *matCellDef="let row" data-label="ram">
+                    {{row.ram}}
+                     </mat-cell>
+               </ng-container>
+               <ng-container matColumnDef="hardDisk">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Ram Size</mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="hardDisk">
+                  {{row.hardDisk}}
+                   </mat-cell>
+             </ng-container>
+             <ng-container matColumnDef="type">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Memory type</mat-header-cell>
+              <mat-cell *matCellDef="let row" data-label="type">
+                {{row.type}}
+                 </mat-cell>
+           </ng-container>
+           <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="type">
+              <span class="px-1 text-bg-Deep-orange" *ngIf="!row.status"> <mat-icon>warning</mat-icon></span>
+              <span class="px-1 text-bg-Green" *ngIf="row.status"> <mat-icon>check_circle</mat-icon></span>  
+            </mat-cell>
+         </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;">
+                </mat-row>
+        </mat-table>
+    <mat-paginator
+    fxLayout="row wrap"
+    [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

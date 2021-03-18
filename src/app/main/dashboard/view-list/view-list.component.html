@@ -1,0 +1,155 @@
+<app-page-banner
+[mainTitle] = "pageContent.pageBanner.mainTitle"
+[title] = "pageContent.pageBanner.title"
+[subTitle] = "pageContent.pageBanner.subTitle"
+[image] = "pageContent.pageBanner.image" 
+[textColor] = "pageContent.pageBanner.textColor"
+[bgColor] = "pageContent.pageBanner.bgColor"
+[gridStrokeColor] = "pageContent.pageBanner.gridStrokeColor"
+[lineStrokeColor] = "pageContent.pageBanner.lineStrokeColor"
+[enableQuickNav] = "pageContent.pageBanner.enableQuickNav">
+</app-page-banner>
+<!--Page Content-->
+<div class="theme-container"> 
+        <mat-card class="bg-Grey-50 p-0">
+            <div fxLayout="row wrap" class="image-content pt-3">
+                <div class="p-2" fxFlex="100" fxHide="false" fxHide.gt-sm>
+                    <h1 fxLayoutAlign="center center">Welcome Karthik Nathani!</h1>
+                </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="33.33"  class="p-3" fxLayoutAlign="center center">
+                      <img [src]="pageContent.rayonStategy.imageUrl" alt="operator" >
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="66.66" class="p-2">
+                      <h1 fxShow="false" fxShow.gt-sm>Welcome Karthik Nathani !</h1>
+                      <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="content" ngClass.xs="p-0"> 
+                          <div fxLayout="column">
+                              <h3 class="py-2">
+                                Data Servers daily analytics report is available for you.
+                              </h3>
+                              <h3>
+                                Please find the details summary for each data server by region below. Please click to view details.
+                              </h3>
+                          </div>
+                      </div> 
+                  </div>
+              </div>
+          </mat-card>
+          <div fxLayout="row wrap" class="pt-2">
+            <div class="p-2" fxFlex="100">
+                <h1 fxLayoutAlign="center center">Data Centers by Region</h1>
+            </div>
+        </div>
+          <div fxLayout="row wrap" class="pt-2">
+            <div fxLayout="row wrap" fxFlex="100" >
+                <div fxLayout="column" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25" *ngFor="let item of title">
+                        <mat-card class="{{item.bgColor}} profileCards m-1 mat-icon-styles">  
+                            <div fxLayout="row wrap">
+                                <h3>
+                                    <span class="px-1"> <mat-icon>{{item.icon}}</mat-icon>   </span>
+                                    <span class="px-1"> {{item.title}}  </span>
+                                </h3>  
+                            </div>
+                            <div class="divider my-1"></div> 
+                                <div fxLayout="row wrap">
+                                    <div fxLayout="column" fxFlex="50">
+                                        <p><span class="text-bold">Region - </span> {{item.region}}</p>
+                                    </div>
+                                    <div fxLayout="column" fxFlex="50">
+                                    <p><span class="text-bold">Location - </span> {{item.location}}</p>  
+                                    </div>
+                                </div>          
+                                <div class="divider my-1"></div> 
+                                <div fxLayout="row wrap">
+                                    <div fxLayout="column" fxFlex="50">
+                                        <p><span class="text-bold">Launched in Year - </span> {{item.launched}}</p>
+                                    </div>
+                                    <div fxLayout="column" fxFlex="50">
+                                        <p><span class="text-bold">Zones - </span> {{item.zones}}</p>
+                                    </div>
+                                </div>
+                                <div class="divider my-1"></div> 
+                                <div fxLayout="row wrap">
+                                    <div fxLayout="column" fxFlex="50">
+                                        <p><span class="text-bold">Usage - </span> {{item.usage}} %</p>
+                                    </div>
+                                    <div fxLayout="column" fxFlex="50">
+                                        <button mat-button (click)="viewDetailsList(item)">
+                                            <span class="mx-1">View Details</span>
+                                          </button> 
+                                    </div>
+                                </div>
+                            </mat-card>
+                           
+                </div>
+            </div>
+        </div>
+</div>
+
+<ng-template #viewDetail>
+    <span class="section-title">
+            <h3>Data Center Details</h3>
+    </span>
+    <mat-divider class="my-1"></mat-divider>
+    <mat-dialog-content>
+            <span class="section-title">
+                    <div class="py-2" >
+                            <div>
+                                    <h4>{{modelDetails.title}}</h4>
+                                    <div fxLayout="row wrap">
+                                        <div fxLayout="column" fxFlex="75">
+                                            <p>
+                                                <span>
+                                                    {{modelDetails.region}}, 
+                                                </span>
+                                                <span>
+                                                    {{modelDetails.location}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div fxLayout="column" fxFlex="25">
+                                            <p>
+                                                <span class="px-1 text-bg-Green"> <mat-icon>check_circle</mat-icon>   </span>
+                                                <span class= "text-bold">Active Servers</span> -
+                                                <span class="px-1">{{modelDetails.content.activeServers}}</span>
+                                            </p>
+                                            <p class="py-1">
+                                                <span class="px-1 text-bg-Deep-orange"> <mat-icon>warning</mat-icon>   </span>
+                                                <span class= "text-bold">Servers Under Maintenance</span> -
+                                                <span class="px-1">{{modelDetails.content.underMainServers}}</span>
+                                            </p>
+                                            <p class="py-1">
+                                                <span class="px-1 text-bg-Red"> <mat-icon>error</mat-icon>   </span>
+                                                <span class= "text-bold">Servers failure</span> -
+                                                <span class="px-1">{{modelDetails.content.failedServers}}</span>
+                                            </p>
+                                        </div>
+                                        </div>
+                                  
+                              </div>
+                            </div>
+                        </span>
+                        <mat-divider class="my-1"></mat-divider>
+            <span class="section-title">
+                    <div class="py-2" >
+                            <div>
+                                    <p>On average, servers and cooling systems account for the greatest shares of direct electricity use in data centers, followed by storage drives and network devices. Current usage is {{modelDetails.usage}} %          
+                                    </p>
+                              </div>
+                            </div>
+                        </span>
+        <label id="radio-group-label"></label>
+    </mat-dialog-content>
+    <div class="title-divider-dark"></div>
+    <div  fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-dialog-actions align="end">
+                    <button mat-raised-button (click)= "closeDialog()"
+                    class="btn-black" >Close</button>
+        </mat-dialog-actions>
+        <mat-dialog-actions align="start">
+            <button mat-raised-button 
+            (click) = "viewDetailsInPage()"
+            class="btn-black" >View</button>
+</mat-dialog-actions>
+        </div>
+ 
+</ng-template>

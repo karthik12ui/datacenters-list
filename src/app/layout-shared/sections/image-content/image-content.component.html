@@ -1,0 +1,23 @@
+<div class="{{bgColor}} {{textColor}}">
+  <div class="theme-container"> 
+      <div fxLayout="row wrap" class="image-content pt-3">
+        <div class="p-2" fxFlex="100" fxHide="false" fxHide.gt-sm>
+            <h1 fxLayoutAlign="center center">{{sectionTitle}}</h1>
+        </div>
+          <div  fxFlex="100" fxFlex.gt-sm="33.33"  class="p-3" fxLayoutAlign="center center">
+              <img [src]="imageUrl" alt="operator" >
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="66.66" class="p-2">
+              <h1 fxShow="false" fxShow.gt-sm>{{sectionTitle}}</h1>
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="content" ngClass.xs="p-0"> 
+                  <div fxLayout="column" *ngFor="let item of content">
+                      <p class="py-2">
+                        {{item.text}}
+                      </p>
+                  </div>
+              </div> 
+          </div>
+      </div>
+   
+</div>
+</div>

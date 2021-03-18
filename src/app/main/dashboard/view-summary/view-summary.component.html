@@ -1,0 +1,61 @@
+<app-page-banner
+[mainTitle] = "pageContent.pageBanner.mainTitle"
+[title] = "pageContent.pageBanner.title"
+[subTitle] = "pageContent.pageBanner.subTitle"
+[image] = "pageContent.pageBanner.image" 
+[textColor] = "pageContent.pageBanner.textColor"
+[bgColor] = "pageContent.pageBanner.bgColor"
+[gridStrokeColor] = "pageContent.pageBanner.gridStrokeColor"
+[lineStrokeColor] = "pageContent.pageBanner.lineStrokeColor"
+[enableQuickNav] = "pageContent.pageBanner.enableQuickNav">
+</app-page-banner>
+<div class="theme-container"> 
+  <mat-card class="bg-Grey-50 p-0">
+    <div class="py-2" >
+      <div>
+              <h1  class="px-3">Name - {{modelDetails.title}}</h1>
+              <div fxLayout="row wrap">
+                  <div fxLayout="column" fxFlex="75">
+                    <h2 class="px-3">Region - {{modelDetails.region}}</h2>
+                    <p class="px-3">
+                        Location - {{modelDetails.location}}
+                    </p>
+                  </div>
+                  <div fxLayout="column" fxFlex="25">
+                      <p>
+                          <span class="px-1 text-bg-Green"> <mat-icon>check_circle</mat-icon>   </span>
+                          <span class= "text-bold">Active Servers</span> -
+                          <span class="px-1">{{modelDetails.content.activeServers}}</span>
+                      </p>
+                      <p class="py-1">
+                          <span class="px-1 text-bg-Deep-orange"> <mat-icon>warning</mat-icon>   </span>
+                          <span class= "text-bold">Servers Under Maintenance</span> -
+                          <span class="px-1">{{modelDetails.content.underMainServers}}</span>
+                      </p>
+                      <p class="py-1">
+                          <span class="px-1 text-bg-Red"> <mat-icon>error</mat-icon>   </span>
+                          <span class= "text-bold">Servers failure</span> -
+                          <span class="px-1">{{modelDetails.content.failedServers}}</span>
+                      </p>
+                  </div>
+                  </div>
+            
+        </div>
+      </div>
+    </mat-card>
+    <mat-card class="bg-Grey-50 p-0" >
+        <div fxLayout="row wrap" class="pt-2" >
+            <div class="p-2" fxFlex="100">
+                <h1 fxLayoutAlign="center center">Servers List</h1>
+            </div>
+            <div fxFlex="100" *ngIf="displayTable">
+                <app-summary-table [data]="apiData">
+      
+                </app-summary-table>
+            </div>
+          
+        </div>
+    </mat-card>
+ 
+   
+</div>

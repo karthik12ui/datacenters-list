@@ -1,0 +1,5 @@
+$rayon-primary:  mat-palette($mat-light-blue, 600, 400, 700);
+$rayon-accent: mat-palette($mat-pink, 500, A200, 800);
+$rayon-warn: mat-palette($mat-red, A200);
+
+$rayon-theme: mat-light-theme($rayon-primary, $rayon-accent, $rayon-warn);

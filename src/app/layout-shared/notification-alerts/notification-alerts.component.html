@@ -1,0 +1,10 @@
+<div *ngIf="NotifyType === 'solid'" style="width: 100%;">
+  <div class="alert {{NotifyParam}} {{NotifyBackgroundColor}} waves-light">
+    <div class="theme-container">
+        <span fxFlex="90" class="notification" [ngClass] = "{'bold-black' : NotifyBackgroundColor === 'background-warning'}" [innerHtml] = "Message"></span>
+        <span class="close" fxFlex="10" fxLayoutAlign="end center" mat-icon-button color="secondary" (click)="alertClose(Id)">
+          <mat-icon color="secondary">close</mat-icon>
+        </span>
+    </div>
+  </div>
+</div>

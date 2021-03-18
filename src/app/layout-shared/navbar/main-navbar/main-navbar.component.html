@@ -1,0 +1,42 @@
+<mat-toolbar id="main-toolbar" class="mat-elevation-z2">
+    <div class="theme-container" fxLayout="row" fxLayoutAlign="space-between center">
+      <a class="header-logo" routerLink="/" > 
+        <img src="assets/images/logos/r-trans-logo.png" alt="user-image" width="50">
+     
+      </a> 
+      <a class="logo_name" routerLink="/" > 
+            <img src="assets/images/logos/r-trans_logo.png" alt="user-image" width="50">
+        </a> 
+
+      <div fxShow="false" fxShow.gt-sm class="horizontal-menu" *ngIf="!!menuItems && menuItems !== null"> 
+          <span *ngFor="let item of menuItems">
+            <a mat-button *ngIf="item.subMenuType == 'parent' && !item.hasSubMenu"
+            routerLinkActive="horizontal-active-link" 
+            [routerLinkActiveOptions]="{exact:true}"
+            (click) = "navigateInApp(item.routerLink)"
+            [id] = "'menu-items-'+item.id">
+            {{item.title}}
+            </a>
+            <span *ngIf="item.hasSubMenu && item.subMenuType !== null">
+                <a mat-button 
+                routerLinkActive="horizontal-active-link" 
+                [routerLinkActiveOptions]="{exact:true}"
+                (click)="openMegaMenu()"
+                [matMenuTriggerFor]="menu.childMenu"
+                [id] = "'menu-items-'+item.id">
+                {{item.title}}
+                <mat-icon class="caret">arrow_drop_down</mat-icon>
+                </a>
+                <app-child-menu-items #menu
+                [parentMenuId] = "item.id"
+                [subChildMenu] = "item.subChildList"
+                [menuType] = "item.subMenuType">
+                </app-child-menu-items>
+              </span>    
+          </span>           
+      </div> 
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <a routerLink="/account/login" mat-raised-button color="primary" fxShow="false" fxShow.gt-xs class="uppercase">Login</a>
+      </div>   
+    </div>     
+  </mat-toolbar>

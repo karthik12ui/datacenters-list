@@ -1,0 +1,24 @@
+<div class="theme-container my-5">
+  <mat-card class="p-0 mat-elevation-z6 box">
+      <div fxLayout="column" fxLayoutAlign="center center" class="bg-primary box-header">
+          <mat-icon class="mat-icon-xlg">error</mat-icon>
+          <h1 class="error">Page not found</h1>
+      </div>
+      <mat-card-content fxLayout="column" fxLayoutAlign="end center" class="my-2">
+        <span class="errorTitle">
+          Code:
+        </span> <h1 class="errorCode">404</h1>
+        <p class="error-text" *ngIf="!!pageNotFoundDetails.Code && pageNotFoundDetails.Code !== null">{{pageNotFoundDetails.Message}}</p>
+      </mat-card-content>
+      <div fxLayout="column" fxLayoutAlign="center center" class="py-4">
+          <span fxLayoutGap="25px" fxLayoutAlign="end center">
+            <a mat-raised-button class="btn-border-black" color="secondary">
+              Back to Home
+            </a>
+            <a mat-raised-button class="btn-black" color="secondary">
+                Sign Out
+            </a>
+          </span>
+      </div>
+  </mat-card>
+</div>

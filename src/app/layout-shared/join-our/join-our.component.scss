@@ -1,0 +1,25 @@
+.get-in-touch{
+    position: relative;
+    margin-top: 80px;
+    overflow: hidden;
+    width: 100%;
+    &:before{        
+        content: '';        
+        position:absolute;
+        top: 0;
+        // z-index: -1;
+        width: 100%;
+        height: 100%; 
+        background-image: url('../../../assets/images/pattern/p3.png');
+        background-repeat: repeat;
+        opacity: 0.3;
+    }   
+    img{
+        max-width: 250px; 
+        position: absolute; 
+        bottom: 0;
+    }
+    .content{
+        padding-left: 200px;
+    }
+}

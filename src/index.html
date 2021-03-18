@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rayonsoft</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <style type="text/css">
+      #initial-app-spinner {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #e0e0e0;
+          z-index: 99999;
+          pointer-events: none;
+      }
+
+      #initial-app-spinner .center {
+          display: block;
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+
+      #initial-app-spinner .logo {
+          width: 450px;
+          margin: 0 auto;
+      }
+
+      #initial-app-spinner .logo img {
+          filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2));
+          width: 450px !important;
+      }
+
+      #initial-app-spinner .spinner-wrapper {
+          display: block;
+          position: relative;
+          width: 100%;
+          min-height: 100px;
+          height: 100px;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner {
+          position: absolute;
+          overflow: hidden;
+          left: 50%;
+          margin-left: -50px;
+          animation: outer-rotate 2.91667s linear infinite;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner {
+          width: 100px;
+          height: 100px;
+          position: relative;
+          animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .gap {
+          position: absolute;
+          left: 49px;
+          right: 49px;
+          top: 0;
+          bottom: 0;
+          border-top: 10px solid;
+          box-sizing: border-box;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .left,
+      #initial-app-spinner .spinner-wrapper .spinner .inner .right {
+          position: absolute;
+          top: 0;
+          height: 100px;
+          width: 50px;
+          overflow: hidden;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .left .half-circle,
+      #initial-app-spinner .spinner-wrapper .spinner .inner .right .half-circle {
+          position: absolute;
+          top: 0;
+          width: 100px;
+          height: 100px;
+          box-sizing: border-box;
+          border: 10px solid #0093d0;
+          border-bottom-color: transparent;
+          border-radius: 50%;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .left {
+          left: 0;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .left .half-circle {
+          left: 0;
+          border-right-color: transparent;
+          animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+          -webkit-animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .right {
+          right: 0;
+      }
+
+      #initial-app-spinner .spinner-wrapper .spinner .inner .right .half-circle {
+          right: 0;
+          border-left-color: transparent;
+          animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+          -webkit-animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+      }
+
+      @keyframes outer-rotate {
+          0% {
+              transform: rotate(0deg) scale(0.5);
+          }
+          100% {
+              transform: rotate(360deg) scale(0.5);
+          }
+      }
+
+      @keyframes left-wobble {
+          0%, 100% {
+              transform: rotate(130deg);
+          }
+          50% {
+              transform: rotate(-5deg);
+          }
+      }
+
+      @keyframes right-wobble {
+          0%, 100% {
+              transform: rotate(-130deg);
+          }
+          50% {
+              transform: rotate(5deg);
+          }
+      }
+
+      @keyframes sporadic-rotate {
+          12.5% {
+              transform: rotate(135deg);
+          }
+          25% {
+              transform: rotate(270deg);
+          }
+          37.5% {
+              transform: rotate(405deg);
+          }
+          50% {
+              transform: rotate(540deg);
+          }
+          62.5% {
+              transform: rotate(675deg);
+          }
+          75% {
+              transform: rotate(810deg);
+          }
+          87.5% {
+              transform: rotate(945deg);
+          }
+          100% {
+              transform: rotate(1080deg);
+          }
+      }
+
+      @media only screen and (max-width: 500px) {   
+        #initial-app-spinner .log {
+            max-width: 350px !important;
+            max-height: 250px !important;
+        }
+      }
+  </style>
+</head>
+<body>
+        <initial-app-spinner id="initial-app-spinner">
+
+            <div class="center">
+
+                <div class="logo">
+                    <img  src="./assets/images/logos/r-trans.png">
+                </div>
+
+                <!-- Material Design Spinner -->
+                <div class="spinner-wrapper">
+                    <div class="spinner">
+                        <div class="inner">
+                            <div class="gap"></div>
+                            <div class="left">
+                                <div class="half-circle"></div>
+                            </div>
+                            <div class="right">
+                                <div class="half-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </initial-app-spinner>
+  <app-root class="display"></app-root>
+</body>
+</html>
